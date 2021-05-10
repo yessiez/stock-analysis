@@ -22,7 +22,6 @@ I wrote a VBA script by using the green_stocks dataset to loop through the data 
 I wrote a VBA script to calculate how long the code takes to execute and output the elapsed time in a message box for each year.
 
 #### 2017 Execution Times
-
 ##### Original
 ![year_value_analysis_2017.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/year_value_analysis_2017.png?raw=true)
 
@@ -31,7 +30,6 @@ I wrote a VBA script to calculate how long the code takes to execute and output 
 
 
 #### 2018 Execution Times
-
 ##### Original
 ![year_value_analysis_2018.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/year_value_analysis_2018.png?raw=true)
 
@@ -42,15 +40,12 @@ Based on the run-times, the refactored code is more efficient.
 
 ### Refactored Script
 ```
-'1a) Create a ticker Index
     tickerIndex = tickers(x)
     
-    '1b) Create three output arrays
     Dim tickerVolumes As Long
     Dim tickerStartingPrices As Single
     Dim tickerEndingPrices As Single
     
-    ''2a) Create a for loop to initialize the tickerVolumes to zero.
     Dim i
     For i = 0 To 11
         tickerVolumes = 0
@@ -58,40 +53,33 @@ Based on the run-times, the refactored code is more efficient.
     'Activate data worksheet
     Worksheets(yearValue).Activate
     
-    ''2b) Loop over all the rows in the spreadsheet.
     Dim j
     For j = 2 To RowCount
-    
-        '3a) Increase volume for current ticker
+   
         If Cells(j, 1).Value = tickerIndex Then
             tickerVolumes = tickerVolumes + Cells(j, 8).Value
         End If
         
-        '3b) Check if the current row is the first row with the selected tickerIndex.
         If Cells(j - 1, 1).Value <> tickerIndex And Cells(j, 1).Value = tickerIndex Then
             tickerStartingPrices = Cells(j, 6).Value
         End If
-        
-        '3c) check if the current row is the last row with the selected ticker
-         'If the next row’s ticker doesn’t match, increase the tickerIndex.
-         If Cells(j + 1, 1).Value <> tickerIndex And Cells(j, 1).Value = tickerIndex Then
+       
+        If Cells(j + 1, 1).Value <> tickerIndex And Cells(j, 1).Value = tickerIndex Then
             tickerEndingPrices = Cells(j, 6).Value
         End If
         
         Next j
     
-        '4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
         Worksheets("All Stocks Analysis").Activate
         Cells(4 + i, 1).Value = tickerIndex
         Cells(4 + i, 2).Value = tickerVolumes
         Cells(4 + i, 3).Value = tickerEndingPrices / tickerStartingPrices - 1
-            
-            '3d Increase the tickerIndex.
+           
             tickerIndex = tickers(i + 1)
 
 ```
 
 ## Summary
 
-Refactoring code improves helps us debug programs and also helps in executing the program more efficiently. It also helps you approach a problem differently. A disadvantage is that you can eaisily get lost.
+Refactoring code improves helps us debug programs and also helps in executing the program more efficiently. It also helps you approach a problem differently. A disadvantage is that you can eaisily get lost. In regard to this VBA script, I had a lot of trouble with the refactored code and I can't think of an advantage, only disadvantages.  
 
