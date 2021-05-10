@@ -21,11 +21,24 @@ I wrote a VBA script by using the green_stocks dataset to loop through the data 
 ### Execution Times
 I wrote a VBA script to calculate how long the code takes to execute and output the elapsed time in a message box for each year.
 
-#### 2017 Execution time
+#### 2017 Execution Times
+
+##### Original
+![year_value_analysis_2017.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/year_value_analysis_2017.png?raw=true)
+
+##### Refactored
 ![VBA_Challenge_2017.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/VBA_Challenge_2017.png?raw=true)
 
-#### 2018 Execution time
+
+#### 2018 Execution Times
+
+##### Original
+![year_value_analysis_2018.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/year_value_analysis_2018.png?raw=true)
+
+##### Refactored
 ![VBA_Challenge_2018.png](https://github.com/yessiez/stock-analysis/blob/master/Resources/VBA_Challenge_2018.png?raw=true)
+
+Based on the run-times, the refactored code is more efficient.
 
 ### Refactored Script
 ```
@@ -79,4 +92,6 @@ I wrote a VBA script to calculate how long the code takes to execute and output 
 ```
 
 ## Summary
+
+Refactoring code improves helps us debug programs and also helps in executing the program more efficiently. It also helps you approach a problem differently. A disadvantage is that you can eaisily get lost.
 
