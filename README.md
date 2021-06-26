@@ -1,5 +1,7 @@
 # stock-analysis
-Performing analysis on stock data
+
+In this module we'll use Visual Basic for Applications, or VBA, to add even more analytical power to Excel. VBA is a programming language that interacts directly with Excel worksheets and cells, allowing us to write scripts to automate simple tasks. It also allows us to write complicated scripts to perform complex analyses, which we wouldn't be able to do with Excel alone.
+Within the context of VBA, you'll learn the fundamental building blocks of programming languages. Learning to code is essentially learning how to deconstruct a problem and translate the solution into simple instructions. Previously, Excel helped us start thinking about data differently. Now, VBA will help us start thinking about how to programmatically analyze that data.
 
 ## Overview of Project
 ### Background
